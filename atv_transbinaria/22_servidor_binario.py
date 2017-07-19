@@ -7,7 +7,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.bind((HOST, PORTA))
 sock.listen(1)
 conn, addr = sock.accept()
-print("Conectado de:" str(addr))
+print("Conectado de:", str(addr))
 
 while True:
     raw_data = conn.recv(44032)
@@ -17,7 +17,7 @@ while True:
     if (data == 'o'):
         with open ('logoifrn.jpg', 'rb') as f1:
             conn.send(f1.read(44032))
-    elif (data == 'q')
+    elif (data == 'q'):
         break
 
 conn.close()
